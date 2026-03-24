@@ -181,9 +181,8 @@
                 <textarea name="bericht" required></textarea>
 
                 <button type="submit">Versturen</button>
+                <button type="button" id="closeLeenPopup">Sluiten</button>
             </form>
-
-            <button id="closeLeenPopup">Sluiten</button>
         </div>
     </div>
 
@@ -193,5 +192,3 @@
     <script src="login.js"></script>
     <script src="leen.js"></script>
 </body>
-
-</html>

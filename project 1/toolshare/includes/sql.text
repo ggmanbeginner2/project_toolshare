@@ -1,0 +1,67 @@
+CREATE TABLE users (
+ users_id INT PRIMARY KEY,
+ username VARCHAR(18),
+wachtwoord VARCHAR(18) 
+);
+
+
+
+INSERT INTO `users` (
+    `users_id`, 
+    `username`, 
+    `wachtwoord`) 
+    VALUES (NULL, 'admin', 'Ismi888.'
+    );
+
+
+    ALTER TABLE users MODIFY wachtwoord VARCHAR(255);
+
+
+
+
+ALTER TABLE users
+ADD COLUMN is_admin TINYINT(1) NOT NULL DEFAULT 0;
+
+
+UPDATE users
+SET is_admin = 1
+WHERE users_id = 2;
+
+
+
+    CREATE TABLE tools (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    naam VARCHAR(100) NOT NULL,
+    category VARCHAR(50) NOT NULL,
+    omschrijving TEXT NOT NULL,
+    conditie VARCHAR(50) NOT NULL,
+    locatie VARCHAR(100) DEFAULT NULL,
+    beschikbaar TINYINT(1) DEFAULT 1,
+    borg DECIMAL(6,2) DEFAULT 0.00,
+    opmerkingen TEXT DEFAULT NULL,
+    PRIMARY KEY (id)
+);
+
+
+
+
+
+
+
+INSERT INTO tools (naam, category, omschrijving, conditie, locatie, borg, beschikbaar, opmerkingen)
+VALUES
+('Boormachine', 'Elektrisch', 'Sterke boor voor hout en metaal', 'Goed', 'Kast A', 20, 1, 'Geen'),
+('Hamer', 'Handgereedschap', 'Stalen hamer', 'Nieuw', 'Kast B', 0, 1, ''),
+('Zaag', 'Handgereedschap', 'Handzaag voor hout', 'Gebruikt', 'Kast C', 5, 1, 'Let op: iets bot');
+
+
+
+CREATE TABLE berichten (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tool_id INT NOT NULL,
+    naam VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    bericht TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (tool_id) REFERENCES tools(id)
+);

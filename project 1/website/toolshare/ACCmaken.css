@@ -1,0 +1,53 @@
+/* make account popup */
+
+/* Popup achtergrond */
+.login-popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup box */
+.login-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Inputs */
+.login-content input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit knop */
+.login-submit {
+    padding: 10px;
+    border: none;
+    background: #2e7d32;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Sluit knop */
+.close-btn {
+    padding: 8px;
+    border: none;
+    background: #c62828;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}

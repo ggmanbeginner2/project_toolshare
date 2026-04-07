@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="admins.css">
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ACCmaken.css">
 
     <?php
     require_once "includes/db.php";
@@ -45,13 +46,34 @@
 
             <button id="searchBtn" class="header-btn">Zoeken</button>
             <button id="filterBtn" class="header-btn">Filter</button>
+
+            <button id="accBtn" class="header-btn">Account maken</button>
             <button id="loginBtn" class="header-btn">Login</button>
 
-            <?php if ($isAdmin): ?>
+            <?php if (isset($_SESSION["user_id"])): ?>
                 <a href="logout.php" class="logout-btn">Uitloggen</a>
             <?php endif; ?>
         </div>
     </header>
+
+    <div id="accPopup" class="login-popup">
+        <div class="login-content">
+            <h2>Account aanmaken</h2>
+
+            <form action="ACCMaken.php" method="POST">
+
+                <label>Gebruikersnaam</label>
+                <input type="text" name="username" required>
+
+                <label>Wachtwoord</label>
+                <input type="password" name="password" required>
+
+                <button type="submit" class="login-submit">Account maken</button>
+            </form>
+
+            <button id="closeAcc" class="close-btn">Sluiten</button>
+        </div>
+    </div>
 
     <div id="filterPopup" class="filter-popup">
         <h3>Filter opties</h3>
@@ -191,4 +213,5 @@
     <script src="info.js"></script>
     <script src="login.js"></script>
     <script src="leen.js"></script>
+    <script src="ACCmaken.js"></script>
 </body>
